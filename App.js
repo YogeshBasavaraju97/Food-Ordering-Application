@@ -1,14 +1,5 @@
-//  <div id= 'parent'>
-//    <div id ='child'>
-//      <h1></h1>
-//        <h2></h2> Adding Siblings
-//    </div>
-// <div id="child2">
-// <h1></h1>
-// <h2></h2> Adding Siblings //{' '}
-//</div>
-// </div>
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 const parent = React.createElement('div', { id: 'parent' }, [
   React.createElement('div', { id: 'child' }, [
     React.createElement('h1', {}, 'hello World'),
@@ -20,6 +11,20 @@ const parent = React.createElement('div', { id: 'parent' }, [
   ]),
 ]);
 
+const jsxheading = <h1 className="head"> hello React 🚀 </h1>;
+// React Functional component
+
+const HeadingComponent = () => <h1> Hey react I am getting closer</h1>;
+
+const Heading = () => <h1> Hey React I am started learning react 🙏</h1>;
+
+const Body = () => (
+  <div>
+    <Heading />
+    <h1> Welocome to React Components</h1>
+  </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(parent);
+root.render(<Body />);

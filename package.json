@@ -1,0 +1,32 @@
+{
+  "name": "react-code",
+  "version": "1.0.0",
+  "description": "React practice by Yogesh",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YogeshBasavaraju97/React_Practice.git"
+  },
+  "keywords": [
+    "react",
+    "UK",
+    "Newark"
+  ],
+  "author": "Yogesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YogeshBasavaraju97/React_Practice/issues"
+  },
+  "homepage": "https://github.com/YogeshBasavaraju97/React_Practice#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
