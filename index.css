@@ -1,0 +1,40 @@
+.body {
+  padding: 2px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo {
+  width: 100px;
+}
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+.restocard-logo {
+  width: 100%;
+
+  object-fit: cover;
+}
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+  font: 30px;
+}
+.search {
+  padding: 10px;
+}
+.resto-card {
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  padding: 2px;
+  margin: 5px;
+}
+.resto-Container {
+  display: flex;
+  flex-wrap: wrap;
+}
