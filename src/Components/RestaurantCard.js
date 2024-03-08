@@ -10,11 +10,11 @@ const RestaurantCard = (props) => {
       <img
         className="restocard-logo"
         alt="src-logo"
-        src={IMG_URL + resData.imgid}
+        src={IMG_URL + resData.info.cloudinaryImageId}
       />
-      <h3>{resData.name} </h3>
-      <h4>{resData.cuisine}</h4>
-      <h4>{resData.stars}*</h4>
+      <h3>{resData.info.name} </h3>
+      <h4>{resData.info.costForTwo}</h4>
+      <h4>{resData.info.avgRatingString}</h4>
       <h4>20min</h4>
     </div>
   );
