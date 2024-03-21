@@ -8,27 +8,28 @@ const Header = () => {
   const [loginbtn, setLonginbtn] = useState('Login');
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between bg-orange-200">
       <div className="logo">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-36" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status : {onlineStatus ? '✅' : '🔴'}</li>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex justify-between p-6 ml-3 ">
+          <li className="px-4">Online Status : {onlineStatus ? '✅' : '🔴'}</li>
+          <li className="px-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/about">About us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/Grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>Cart</li>
           <button
+            className="px-4"
             onClick={() => {
               loginbtn === 'Login'
                 ? setLonginbtn('Logout')

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
-import { item_URL } from '../../utils/constant';
 import { useParams } from 'react-router-dom';
-import { useRestoMenu } from '../../utils/useRestoMenu';
+import useRestoMenu from '../../utils/useRestoMenu';
+import RestaurantCategory from './RestaurantCategory';
 
-const ResturantMenu = () => {
+const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [restoInfo, setRestoInfo] = useState(null);
 
-  const resInfo = useRestoMenu(resId);
+  const restoInfo = useRestoMenu(resId);
+  const [showIndex, setshowIndex] = useState(0);
 
   // useEffect(() => {
   //   fetchMenu();
@@ -23,6 +23,7 @@ const ResturantMenu = () => {
   //   );
   //   setRestoInfo(jsonData.data);
   // };
+
   if (restoInfo === null) {
     return <Shimmer />;
   }
@@ -31,22 +32,27 @@ const ResturantMenu = () => {
   const { itemCards } =
     restoInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
+  const categories =
+    restoInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (type) =>
+        type.card?.['card']?.['@type'] ===
+        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    );
 
   return (
-    <div>
-      <h1> {name}</h1>
-      <h2>{cuisines.join(',')} </h2>
-      <h4>Cost for Two :{costForTwo / 100} £</h4>
-      <h2>Menu List</h2>
-      <ul>
-        {itemCards.map((res) => (
-          <li key={res.card.info.id}>
-            {res.card.info.name} - £{res.card.info.price / 100}
-          </li>
-        ))}
-      </ul>
+    <div className="w-6/12 mx-auto text-center flex flex-col justify-center">
+      <h1 className="font-bold my-3 "> {name}</h1>
+      <h2 className="font-bold ">{cuisines} </h2>
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category.id}
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          showIndex={() => setshowIndex(index)}
+        />
+      ))}
     </div>
   );
 };
 
-export default ResturantMenu;
+export default RestaurantMenu;
