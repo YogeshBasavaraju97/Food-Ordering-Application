@@ -1,7 +1,10 @@
-# React practice 🚀
+# React Online food order Application 🚀
 
-# Practice
-
+# Used Swiggy API
+- Using Parcel web pakage
+- Implemted hooks
+- React Router DOM
+- Tailwind CSS
 - Dev Building
 - Local server
 - HMR - Hot module replacement
