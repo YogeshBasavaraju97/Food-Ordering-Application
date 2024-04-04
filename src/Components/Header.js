@@ -1,10 +1,19 @@
 import React from 'react';
 import { LOGO_URL } from '../../utils/constant';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../../utils/useOnlineStatus';
 
+import UserContext from '../../utils/UserContext';
+import { useSelector } from 'react-redux';
+
 const Header = () => {
+  // subscribing to the store
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
+  let { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
   const [loginbtn, setLonginbtn] = useState('Login');
   const onlineStatus = useOnlineStatus();
   return (
@@ -27,17 +36,22 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            {' '}
+            <Link to="/cart">Cart</Link>
+            {cartItems.length}
+          </li>
           <button
             className="px-4"
             onClick={() => {
-              loginbtn === 'Login'
+              loginbtn === 'login'
                 ? setLonginbtn('Logout')
                 : setLonginbtn('Login');
             }}
           >
             {loginbtn}
           </button>
+          <li>{loggedInUser}</li>
         </ul>
       </div>
     </div>

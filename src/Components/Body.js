@@ -5,11 +5,15 @@ import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../../utils/useOnlineStatus';
+import { useContext } from 'react';
+import UserContext from '../../utils/UserContext';
 
 const Body = () => {
   const [List, setList] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredList, setFilteredList] = useState([]);
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const RestaurantPromotedCard = promotedCard(RestaurantCard);
 
@@ -83,6 +87,12 @@ const Body = () => {
         >
           Top Rated restaurant
         </button>
+        <label>User name:</label>
+        <input
+          className="border border-purple-200"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
 
       <div className="flex flex-wrap">
