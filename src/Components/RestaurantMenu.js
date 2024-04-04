@@ -10,30 +10,17 @@ const RestaurantMenu = () => {
   const restoInfo = useRestoMenu(resId);
   const [showIndex, setshowIndex] = useState(0);
 
-  // useEffect(() => {
-  //   fetchMenu();
-  // }, []);
-  // const fetchMenu = async () => {
-  //   const data = await fetch(item_URL + resId);
-  //   const jsonData = await data.json();
-  //   console.log(jsonData.data);
-  //   console.log(
-  //     jsonData.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[2].card
-  //       .card.itemCards[0].card.info.name
-  //   );
-  //   setRestoInfo(jsonData.data);
-  // };
-
   if (restoInfo === null) {
     return <Shimmer />;
   }
-  const { name, cuisines, costForTwo } = restoInfo.cards[0].card.card.info;
+  const { text } = restoInfo.cards[0].card.card;
 
-  const { itemCards } =
-    restoInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
+  // const { itemCards } =
+  //   restoInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  //     ?.card;
+
   const categories =
-    restoInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    restoInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (type) =>
         type.card?.['card']?.['@type'] ===
         'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
@@ -41,8 +28,8 @@ const RestaurantMenu = () => {
 
   return (
     <div className="w-6/12 mx-auto text-center flex flex-col justify-center">
-      <h1 className="font-bold my-3 "> {name}</h1>
-      <h2 className="font-bold ">{cuisines} </h2>
+      <h1 className="font-bold my-3 "> {text}</h1>
+
       {categories.map((category, index) => (
         <RestaurantCategory
           key={category.id}
@@ -56,3 +43,16 @@ const RestaurantMenu = () => {
 };
 
 export default RestaurantMenu;
+// useEffect(() => {
+//   fetchMenu();
+// }, []);
+// const fetchMenu = async () => {
+//   const data = await fetch(item_URL + resId);
+//   const jsonData = await data.json();
+//   console.log(jsonData.data);
+//   console.log(
+//     jsonData.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR.cards[2].card
+//       .card.itemCards[0].card.info.name
+//   );
+//   setRestoInfo(jsonData.data);
+// };
