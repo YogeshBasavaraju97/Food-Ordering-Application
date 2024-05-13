@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-# React Online food order Application 🚀
-=======
-# Food Ordering Application using React
 
-Used parcel package which helps in
->>>>>>> bd16cb4 (Redux Toolkit implementation)
+# React Online food order Application 🚀
+
+Used parcel webpack
+> (Redux Toolkit implementation)
 
 # Used Swiggy API
 - Using Parcel web pakage
