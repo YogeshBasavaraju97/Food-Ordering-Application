@@ -4,7 +4,7 @@
 Used parcel webpack
 > (Redux Toolkit implementation)
 
-# Used Swiggy API
+ -Used Swiggy API
 - Using Parcel web pakage
 - Implemted hooks
 - React Router DOM
