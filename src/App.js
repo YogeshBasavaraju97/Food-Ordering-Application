@@ -79,6 +79,10 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
   },
 ]);
+
+const Head = () => {
+  return <div>hello</div>;
+};
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<RouterProvider router={appRouter} />);
