@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 # React Online food order Application 🚀
-=======
-# Food Ordering Application using React
 
 Used parcel package which helps in
->>>>>>> bd16cb4 (Redux Toolkit implementation)
 
-# Used Swiggy API
+- used Redux Toolkit
+- Used Swiggy API
 - Using Parcel web pakage
 - Implemted hooks
 - React Router DOM
@@ -26,4 +23,14 @@ Used parcel package which helps in
 - Error handling
 - Tree shaking: removes unused code
 
-#Redux Toolkit
+#Jest Testing
+-installed React testing library
+-Installed Jest
+-Installed babel dependencies
+-Installed Babel
+-Configured babel confi file to disable default babel transformation
+-Jest -npx jest --init
+-Install js dom library
+-Install @babel/preset-react to jsx work in test cases
+-Include @babel/preset-react inside babel config
+-Install npm i -D @testing-library/jest-dom
