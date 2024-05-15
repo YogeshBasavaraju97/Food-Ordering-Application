@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
   // const { itemCards } =
   //   restoInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
   //     ?.card;
-
+  console.log(restoInfo.cards[0].card.card);
   const categories =
     restoInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (type) =>

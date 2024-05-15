@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
   return (
     <div className="w-[200px] h-[300px] m-2 p-4 bg-slate-200 hover:bg-cyan-100 rounded-sm ">
       <img
-        className=" w-80  overflow-auto"
+        className=" w-80 h-28 object-cover "
         alt="src-logo"
         src={IMG_URL + resData.info.cloudinaryImageId}
       />
